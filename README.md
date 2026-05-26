@@ -1,4 +1,4 @@
-# EduAttend — Attendance Management System
+# Web Based Attendance Management System
 
 PHP-based academic attendance system for XAMPP (HTML, CSS, JavaScript, PHP, MySQL).
 
