@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EduAttend - Mark Attendance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error": "#ffffff",
+                      "surface-bright": "#fbf8ff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed-variant": "#173bab",
+                      "on-primary-fixed": "#001453",
+                      "on-error-container": "#93000a",
+                      "surface-dim": "#dad9e3",
+                      "on-secondary-fixed-variant": "#38485d",
+                      "secondary": "#505f76",
+                      "surface-container-high": "#e8e7f1",
+                      "on-surface": "#1a1b22",
+                      "inverse-surface": "#2f3037",
+                      "on-secondary-fixed": "#0b1c30",
+                      "on-surface-variant": "#444653",
+                      "surface-container": "#eeedf7",
+                      "surface-container-low": "#f4f2fc",
+                      "surface": "#fbf8ff",
+                      "outline-variant": "#c4c5d5",
+                      "secondary-container": "#d0e1fb",
+                      "on-tertiary-fixed-variant": "#802a00",
+                      "on-secondary": "#ffffff",
+                      "primary-container": "#1e40af",
+                      "on-secondary-container": "#54647a",
+                      "primary": "#00288e",
+                      "surface-container-highest": "#e3e1eb",
+                      "tertiary-fixed-dim": "#ffb59a",
+                      "error-container": "#ffdad6",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-container": "#ffa583",
+                      "surface-variant": "#e3e1eb",
+                      "on-primary-container": "#a8b8ff",
+                      "inverse-on-surface": "#f1f0fa",
+                      "tertiary-container": "#872d00",
+                      "secondary-fixed": "#d3e4fe",
+                      "secondary-fixed-dim": "#b7c8e1",
+                      "background": "#fbf8ff",
+                      "inverse-primary": "#b8c4ff",
+                      "on-primary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "surface-tint": "#3755c3",
+                      "tertiary": "#611e00",
+                      "on-tertiary-fixed": "#380d00",
+                      "tertiary-fixed": "#ffdbce",
+                      "primary-fixed": "#dde1ff",
+                      "primary-fixed-dim": "#b8c4ff",
+                      "on-background": "#1a1b22",
+                      "outline": "#757684"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "4px",
+                      "sidebar-width": "280px",
+                      "xl": "32px",
+                      "md": "16px",
+                      "xs": "4px",
+                      "container-max": "1440px",
+                      "sm": "8px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "h2": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "h1": ["Inter"],
+                      "h3": ["Inter"],
+                      "display": ["Inter"],
+                      "label-md": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "h2": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "h1": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Sidebar Navigation -->
+<aside class="w-[280px] h-screen fixed left-0 top-0 bg-surface-low dark:bg-surface-container-lowest border-r border-outline-variant dark:border-outline flex flex-col h-full py-lg">
+<div class="px-xl mb-xl">
+<h2 class="font-h2 text-h2 font-bold text-primary dark:text-primary-fixed">EduAttend</h2>
+<p class="font-body-sm text-body-sm text-secondary">Academic Portal</p>
+</div>
+<nav class="flex-grow px-md space-y-xs">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-on-primary-fixed-variant transition-colors group" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-primary dark:text-primary-fixed font-bold border-l-4 border-primary dark:border-primary-fixed hover:bg-secondary-container transition-colors" href="#">
+<span class="material-symbols-outlined">how_to_reg</span>
+<span class="font-label-md text-label-md">Mark Attendance</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-on-primary-fixed-variant transition-colors" href="#">
+<span class="material-symbols-outlined">assessment</span>
+<span class="font-label-md text-label-md">View Report</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-on-primary-fixed-variant transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<div class="px-xl mt-auto pt-lg border-t border-outline-variant">
+<div class="flex items-center gap-sm">
+<div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+<span class="font-label-sm text-label-sm text-secondary">System Status: Active</span>
+</div>
+</div>
+</aside>
+<!-- Header Navigation -->
+<header class="fixed top-0 right-0 w-[calc(100%-280px)] h-16 bg-surface dark:bg-background border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none z-10">
+<div class="flex justify-end items-center px-xl h-full">
+<div class="flex items-center gap-lg">
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors active:scale-95">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors active:scale-95">help_outline</button>
+</div>
+<div class="flex items-center gap-sm border-l border-outline-variant pl-lg">
+<div class="text-right">
+<p class="font-label-md text-label-md text-on-surface">Dr. Sarah Jenkins</p>
+<p class="text-[10px] text-secondary">FACULTY ID: #8821</p>
+</div>
+<img alt="User Avatar" class="w-10 h-10 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB72Nnad0MNZXiMO5MGtBWyM4o5wSp-DQvlDOuaeIva1M5raoTFLOSDFSd3ZYE7UenJ0DF_zfCX7Q1dbEPtlKfgxcTaD0NCZL6vDFUO75VrhSbg72wqh0KvDnWx442kFwZBMpYnkaScTrSl2Uq5cILMjWMcQWbOob33o3kwcMkoSeNeZNOxOhlAJFuvBifLhgJfjUXuHNWwb368-IurTZE-bXedrSeLHdQ_LPVZezlzILekNac4eTER8IvGaznYLhQ8OwXY9G2ZcA"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-[280px] pt-16 min-h-screen">
+<div class="max-w-[1440px] mx-auto p-xl">
+<!-- Selection Section -->
+<div class="bg-white rounded-xl border border-outline-variant shadow-sm mb-lg p-lg">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-lg">
+<div class="space-y-xs">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">school</span>
+<h1 class="font-h1 text-h1 text-on-surface">Mark Attendance</h1>
+</div>
+<p class="font-body-md text-body-md text-secondary">Record daily student attendance for your assigned lectures.</p>
+</div>
+<div class="flex flex-wrap gap-md w-full md:w-auto">
+<div class="flex flex-col gap-xs w-full md:w-64">
+<label class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Select Class</label>
+<select class="rounded-lg border-outline-variant text-body-sm focus:border-primary focus:ring-1 focus:ring-primary/10 transition-all bg-surface">
+<option>Computer Science 101</option>
+<option>Data Structures II</option>
+<option>AI Ethics Lab</option>
+<option>Discrete Mathematics</option>
+</select>
+</div>
+<div class="flex flex-col gap-xs w-full md:w-48">
+<label class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Date</label>
+<input class="rounded-lg border-outline-variant text-body-sm focus:border-primary focus:ring-1 focus:ring-primary/10 transition-all bg-surface" type="date" value="2023-10-24"/>
+</div>
+</div>
+</div>
+<div class="mt-xl flex items-center justify-between p-md bg-surface-container-low rounded-lg border border-outline-variant/50">
+<div class="flex items-center gap-xl">
+<div>
+<span class="font-label-sm text-label-sm text-secondary">CLASS NAME</span>
+<p class="font-h3 text-h3 text-primary">Computer Science 101</p>
+</div>
+<div class="border-l border-outline-variant h-10"></div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary">CLASS CODE</span>
+<p class="font-h3 text-h3 text-primary">CS101-FALL</p>
+</div>
+</div>
+<div class="hidden lg:flex items-center gap-md">
+<div class="text-right">
+<p class="font-label-md text-label-md text-on-surface">Total Enrolled</p>
+<p class="font-h2 text-h2 text-on-surface">42 Students</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Attendance Table Section -->
+<div class="bg-white rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="p-md bg-surface-container border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-label-md text-label-md text-on-surface-variant">STUDENT ATTENDANCE SHEET</h3>
+<div class="flex gap-md">
+<button class="text-primary font-label-md text-label-md hover:underline">Mark all Present</button>
+<button class="text-secondary font-label-md text-label-md hover:underline">Clear Selection</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low">
+<tr>
+<th class="px-xl py-md font-label-sm text-label-sm text-secondary uppercase tracking-widest border-b border-outline-variant">Roll No.</th>
+<th class="px-xl py-md font-label-sm text-label-sm text-secondary uppercase tracking-widest border-b border-outline-variant">Student Name</th>
+<th class="px-xl py-md font-label-sm text-label-sm text-secondary uppercase tracking-widest border-b border-outline-variant text-center">Present</th>
+<th class="px-xl py-md font-label-sm text-label-sm text-secondary uppercase tracking-widest border-b border-outline-variant text-center">Absent</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="px-xl py-md font-body-sm text-body-sm text-secondary">2023-CS-001</td>
+<td class="px-xl py-md">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center font-label-sm">AA</div>
+<span class="font-label-md text-label-md text-on-surface">Adrian Alvarez</span>
+</div>
+</td>
+<td class="px-xl py-md text-center">
+<input checked="" class="w-5 h-5 text-primary focus:ring-primary-container border-outline-variant cursor-pointer" name="att_001" type="radio"/>
+</td>
+<td class="px-xl py-md text-center">
+<input class="w-5 h-5 text-error focus:ring-error-container border-outline-variant cursor-pointer" name="att_001" type="radio"/>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="px-xl py-md font-body-sm text-body-sm text-secondary">2023-CS-002</td>
+<td class="px-xl py-md">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-sm">BC</div>
+<span class="font-label-md text-label-md text-on-surface">Beatrix Chen</span>
+</div>
+</td>
+<td class="px-xl py-md text-center">
+<input class="w-5 h-5 text-primary focus:ring-primary-container border-outline-variant cursor-pointer" name="att_002" type="radio"/>
+</td>
+<td class="px-xl py-md text-center">
+<input class="w-5 h-5 text-error focus:ring-error-container border-outline-variant cursor-pointer" name="att_002" type="radio"/>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="bg-surface-container-lowest">
+<td class="px-xl py-md font-body-sm text-body-sm text-secondary">2023-CS-003</td>
+<td class="px-xl py-md">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-on-primary-fixed-variant text-white flex items-center justify-center font-label-sm">DH</div>
+<span class="font-label-md text-label-md text-on-surface">Daniel Harrison</span>
+</div>
+</td>
+<td class="px-xl py-md text-center">
+<input class="w-5 h-5 text-primary focus:ring-primary-container border-outline-variant cursor-pointer" name="att_003" type="radio"/>
+</td>
+<td class="px-xl py-md text-center">
+<input checked="" class="w-5 h-5 text-error focus:ring-error-container border-outline-variant cursor-pointer" name="att_003" type="radio"/>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="px-xl py-md font-body-sm text-body-sm text-secondary">2023-CS-004</td>
+<td class="px-xl py-md">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-tertiary text-white flex items-center justify-center font-label-sm">EM</div>
+<span class="font-label-md text-label-md text-on-surface">Elena Moretti</span>
+</div>
+</td>
+<td class="px-xl py-md text-center">
+<input checked="" class="w-5 h-5 text-primary focus:ring-primary-container border-outline-variant cursor-pointer" name="att_004" type="radio"/>
+</td>
+<td class="px-xl py-md text-center">
+<input class="w-5 h-5 text-error focus:ring-error-container border-outline-variant cursor-pointer" name="att_004" type="radio"/>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="px-xl py-md font-body-sm text-body-sm text-secondary">2023-CS-005</td>
+<td class="px-xl py-md">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-outline text-white flex items-center justify-center font-label-sm">FK</div>
+<span class="font-label-md text-label-md text-on-surface">Fiona Kalu</span>
+</div>
+</td>
+<td class="px-xl py-md text-center">
+<input checked="" class="w-5 h-5 text-primary focus:ring-primary-container border-outline-variant cursor-pointer" name="att_005" type="radio"/>
+</td>
+<td class="px-xl py-md text-center">
+<input class="w-5 h-5 text-error focus:ring-error-container border-outline-variant cursor-pointer" name="att_005" type="radio"/>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination/Summary Footer -->
+<div class="p-lg bg-surface-container-low border-t border-outline-variant flex flex-col sm:flex-row justify-between items-center gap-lg">
+<div class="flex items-center gap-xl">
+<div class="flex items-center gap-sm">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="font-label-md text-label-md text-on-surface">38 Present</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="w-3 h-3 rounded-full bg-error"></span>
+<span class="font-label-md text-label-md text-on-surface">4 Absent</span>
+</div>
+</div>
+<div class="flex gap-md">
+<button class="px-xl py-md rounded-lg bg-primary text-white font-label-md text-label-md hover:bg-primary-container transition-all active:scale-95 shadow-md">Submit Attendance</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

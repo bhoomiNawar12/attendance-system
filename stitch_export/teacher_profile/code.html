@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error": "#ffffff",
+                      "surface-bright": "#fbf8ff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed-variant": "#173bab",
+                      "on-primary-fixed": "#001453",
+                      "on-error-container": "#93000a",
+                      "surface-dim": "#dad9e3",
+                      "on-secondary-fixed-variant": "#38485d",
+                      "secondary": "#505f76",
+                      "surface-container-high": "#e8e7f1",
+                      "on-surface": "#1a1b22",
+                      "inverse-surface": "#2f3037",
+                      "on-secondary-fixed": "#0b1c30",
+                      "on-surface-variant": "#444653",
+                      "surface-container": "#eeedf7",
+                      "surface-container-low": "#f4f2fc",
+                      "surface": "#fbf8ff",
+                      "outline-variant": "#c4c5d5",
+                      "secondary-container": "#d0e1fb",
+                      "on-tertiary-fixed-variant": "#802a00",
+                      "on-secondary": "#ffffff",
+                      "primary-container": "#1e40af",
+                      "on-secondary-container": "#54647a",
+                      "primary": "#00288e",
+                      "surface-container-highest": "#e3e1eb",
+                      "tertiary-fixed-dim": "#ffb59a",
+                      "error-container": "#ffdad6",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-container": "#ffa583",
+                      "surface-variant": "#e3e1eb",
+                      "on-primary-container": "#a8b8ff",
+                      "inverse-on-surface": "#f1f0fa",
+                      "tertiary-container": "#872d00",
+                      "secondary-fixed": "#d3e4fe",
+                      "secondary-fixed-dim": "#b7c8e1",
+                      "background": "#fbf8ff",
+                      "inverse-primary": "#b8c4ff",
+                      "on-primary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "surface-tint": "#3755c3",
+                      "tertiary": "#611e00",
+                      "on-tertiary-fixed": "#380d00",
+                      "tertiary-fixed": "#ffdbce",
+                      "primary-fixed": "#dde1ff",
+                      "primary-fixed-dim": "#b8c4ff",
+                      "on-background": "#1a1b22",
+                      "outline": "#757684"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "4px",
+                      "sidebar-width": "280px",
+                      "xl": "32px",
+                      "md": "16px",
+                      "xs": "4px",
+                      "container-max": "1440px",
+                      "sm": "8px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "h2": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "h1": ["Inter"],
+                      "h3": ["Inter"],
+                      "display": ["Inter"],
+                      "label-md": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "h2": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "h1": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased">
+<!-- Sidebar Navigation Shell -->
+<aside class="w-[280px] h-screen fixed left-0 top-0 bg-surface-low dark:bg-surface-container-lowest border-r border-outline-variant dark:border-outline flex flex-col h-full py-lg">
+<div class="px-xl mb-xl">
+<h1 class="font-h2 text-h2 font-bold text-primary dark:text-primary-fixed">EduAttend</h1>
+<p class="font-label-md text-label-md text-secondary">Academic Portal</p>
+</div>
+<nav class="flex-grow">
+<ul class="space-y-xs px-md">
+<li>
+<a class="flex items-center gap-md px-lg py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-lg py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">how_to_reg</span>
+<span>Mark Attendance</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-lg py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">assessment</span>
+<span>View Report</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-lg py-sm rounded-lg text-primary dark:text-primary-fixed font-bold border-l-4 border-primary dark:border-primary-fixed bg-secondary-container/30 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">person</span>
+<span>Profile</span>
+</a>
+</li>
+</ul>
+</nav>
+<div class="px-xl pt-lg border-t border-outline-variant">
+<div class="p-md rounded-lg bg-surface-container-high/50">
+<p class="font-label-sm text-label-sm text-primary font-bold">System Status: Active</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-[280px] min-h-screen flex flex-col bg-background">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 right-0 w-[calc(100%-280px)] h-16 bg-surface dark:bg-background border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none flex justify-between items-center px-xl z-10">
+<div class="flex items-center gap-md bg-surface-container-low px-md py-xs rounded-full border border-outline-variant">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-sm font-body-sm w-64" placeholder="Search profiles..." type="text"/>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer active:scale-95 transition-all">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer active:scale-95 transition-all">help_outline</span>
+</div>
+<div class="h-8 w-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden border border-outline-variant">
+<img alt="User Avatar" class="h-full w-full object-cover" data-alt="A professional headshot of an academic professor in his 40s wearing glasses and a navy blue blazer. The background is a soft-focus library environment with warm lighting, creating an atmosphere of expertise and institutional authority. The image has a clean, high-resolution aesthetic with neutral, modern colors consistent with a professional portal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnzv4EU05OL2adIEetqgXIXs9mNHy5oYm_gZUVhpI_Pp0TUvJp0Q1UwU-G0ElEJIpr3zTudnOpYxKsReUN9Qb6YAgaKcbUI2H0xqg2wSrSZMhDqwe_wnHpGoJwHVxtWu-_WLGdyAgOJ5lnBzUB6JgD2dP676qwQJn6Ewrfse_noW_6Xnv2QZn9Z_8lrT-D5VoIbQWKV3gNCMjdgA7TiYmdNoJOhK6YgWO3GyeLOTc5GaAGrtutHUu9gTzo0i9QRbJklvsPDXpfKw"/>
+</div>
+</div>
+</header>
+<!-- Profile Content -->
+<div class="mt-16 p-xl flex-grow flex items-center justify-center">
+<div class="max-w-md w-full bg-white rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<!-- Header Decorative Area -->
+<div class="h-24 bg-primary relative">
+<div class="absolute -bottom-12 left-1/2 -translate-x-1/2">
+<div class="h-24 w-24 rounded-full border-4 border-white bg-surface shadow-md overflow-hidden">
+<img alt="Prof. Anderson" class="h-full w-full object-cover" data-alt="Close-up portrait of a male professor with a friendly expression, wearing a crisp white shirt and dark blazer. The lighting is bright and even, reflecting a modern corporate minimalism style. The background is a solid light gray, ensuring the subject stands out clearly as the focus of a teacher profile page." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJv2ZM32NUYkYqoxdsQ6FMRBlxRqxmTWtNpCDGwZORGQUFYqPgvh9TMTNJ_aIOqMLzIBUMFYgY52z0RU9vCjxVLOYOJEW0MBrDhe-N9RWhPYnxfRcL1H6OLqU-cLExRCAI-057tJCcb2JxDb47m4NgHZCkuqcnWOXGYIIr1pPw_caAXPDTo6CnB9RA63pgMhfiaX_lR2eaZ3mK_CZ4-BLrEGjOSwG36d_UJjSPTrw5V2JGB12ZKC5ggd4IU92xssYQxdEEoZA1Ng"/>
+</div>
+</div>
+</div>
+<!-- Profile Details -->
+<div class="pt-16 pb-lg px-xl text-center">
+<h2 class="font-h2 text-h2 text-on-surface mb-xs">Prof. Anderson</h2>
+<div class="space-y-md border-f1f5f9 text-center">
+<div class="flex items-center gap-md justify-center">
+<span class="material-symbols-outlined text-primary">mail</span>
+<div>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Email Address</p>
+<p class="font-body-md text-body-md text-on-surface">anderson@university.edu</p>
+</div>
+</div>
+<div class="flex items-center gap-md justify-center">
+<span class="material-symbols-outlined text-primary">apartment</span>
+<div>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Department</p>
+<p class="font-body-md text-body-md text-on-surface">Computer Science &amp; Engineering</p>
+</div>
+</div>
+</div>
+<div class="mt-xl pt-xl flex flex-col gap-md">
+<button class="w-full py-md bg-white border border-outline-variant rounded-lg font-label-md text-label-md text-error hover:bg-error/5 transition-colors flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">logout</span>
+                            Logout
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer / Credits -->
+<footer class="p-xl text-center">
+<p class="font-label-sm text-label-sm text-outline">© 2024 EduAttend Institutional Management System. All rights reserved.</p>
+</footer>
+</main>
+</body></html>

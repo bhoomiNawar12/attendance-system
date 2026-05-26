@@ -1,0 +1,48 @@
+# Attendance System Project Context
+
+Tech Stack:
+- HTML
+- CSS
+- JavaScript
+- PHP
+- MySQL
+- XAMPP
+
+Database:
+- Name: eduattend
+
+Tables:
+- users
+- classes
+- enrollments
+- attendance
+- reports
+
+Authentication:
+- Registration working
+- Login working
+- Password hashing enabled
+- Sessions being implemented
+
+Project Root:
+http://localhost/attendance-system/
+
+Structure:
+- php/config/database.php
+- php/auth/register.php
+- php/auth/login.php
+
+Roles:
+- Teacher
+- Student
+
+Current Progress:
+- Frontend completed
+- Database connected
+- Registration working
+- Login working
+
+Next Task:
+- Session protection
+- Logout
+- Role-based dashboard protection

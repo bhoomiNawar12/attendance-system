@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fbf8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#173bab",
+                        "on-primary-fixed": "#001453",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#dad9e3",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "secondary": "#505f76",
+                        "surface-container-high": "#e8e7f1",
+                        "on-surface": "#1a1b22",
+                        "inverse-surface": "#2f3037",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-surface-variant": "#444653",
+                        "surface-container": "#eeedf7",
+                        "surface-container-low": "#f4f2fc",
+                        "surface": "#fbf8ff",
+                        "outline-variant": "#c4c5d5",
+                        "secondary-container": "#d0e1fb",
+                        "on-tertiary-fixed-variant": "#802a00",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#1e40af",
+                        "on-secondary-container": "#54647a",
+                        "primary": "#00288e",
+                        "surface-container-highest": "#e3e1eb",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#ffa583",
+                        "surface-variant": "#e3e1eb",
+                        "on-primary-container": "#a8b8ff",
+                        "inverse-on-surface": "#f1f0fa",
+                        "tertiary-container": "#872d00",
+                        "secondary-fixed": "#d3e4fe",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "background": "#fbf8ff",
+                        "inverse-primary": "#b8c4ff",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#3755c3",
+                        "tertiary": "#611e00",
+                        "on-tertiary-fixed": "#380d00",
+                        "tertiary-fixed": "#ffdbce",
+                        "primary-fixed": "#dde1ff",
+                        "primary-fixed-dim": "#b8c4ff",
+                        "on-background": "#1a1b22",
+                        "outline": "#757684"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "sidebar-width": "280px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "container-max": "1440px",
+                        "sm": "8px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "h1": ["Inter"],
+                        "h3": ["Inter"],
+                        "display": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h2": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "h1": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased">
+<!-- Sidebar (Shared Component) -->
+<aside class="w-[280px] h-screen fixed left-0 top-0 bg-surface-low dark:bg-surface-container-lowest border-r border-outline-variant dark:border-outline flex flex-col py-lg z-50">
+<div class="px-lg mb-xl">
+<h1 class="font-h2 text-h2 font-bold text-primary dark:text-primary-fixed">EduAttend</h1>
+<p class="font-body-sm text-body-sm text-secondary">Academic Portal</p>
+</div>
+<nav class="flex-grow space-y-xs px-md">
+<a class="flex items-center gap-md px-lg py-sm text-primary dark:text-primary-fixed font-bold border-l-4 border-primary dark:border-primary-fixed hover:bg-secondary-container transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-lg py-sm text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container transition-colors" href="#">
+<span class="material-symbols-outlined">how_to_reg</span>
+<span class="font-label-md text-label-md">Attendance</span>
+</a>
+<a class="flex items-center gap-md px-lg py-sm text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container transition-colors" href="#">
+<span class="material-symbols-outlined">assessment</span>
+<span class="font-label-md text-label-md">Reports</span>
+</a>
+<a class="flex items-center gap-md px-lg py-sm text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<div class="mt-auto px-lg pt-lg border-t border-outline-variant">
+<div class="flex items-center gap-sm py-xs">
+<div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+<span class="font-label-sm text-label-sm text-secondary">System Status: Active</span>
+</div>
+</div>
+</aside>
+<!-- Header (Shared Component) -->
+<header class="fixed top-0 right-0 w-[calc(100%-280px)] h-16 bg-surface dark:bg-background border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none z-40 flex justify-between items-center px-xl">
+<div class="flex items-center gap-lg">
+<!-- Removed Hamburger Menu Icon -->
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex gap-md">
+<button class="material-symbols-outlined p-xs text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95">notifications</button>
+<button class="material-symbols-outlined p-xs text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95">help_outline</button>
+</div>
+<div class="flex items-center gap-sm border-l border-outline-variant pl-lg">
+<div class="text-right hidden lg:block">
+<p class="font-label-md text-label-md leading-none">Dr. Sarah Jenkins</p>
+<p class="font-label-sm text-label-sm text-secondary">Department Chair</p>
+</div>
+<img alt="User Avatar" class="w-10 h-10 rounded-full border-2 border-primary-fixed shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb1OTsSyqUeGyQBfv0shvJlZZpJBERS_wa9n6E1h2pln7b8xd5gfP4vzXlwxmOsJx6QVAwqx4NjA4p46tgnoMsHUg4djBve71bDBBlQSEsy_Smqa-DXRs4gPZaYtYoxvHhOn9qKh7Nv_gUudNt5a8pidWT_7uZAIp2chsGb6Zj6Bh7-iGnqGiuDaPtzHQNQWyupX5BYJQrscWqvqHzGD46T4Du7ahyTHdnXPh7AuaRVps4XSzcE0OJSc8Z5EF0fNuFJPb37t-5JA"/>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-[280px] pt-16 min-h-screen flex items-center justify-center bg-surface">
+<div class="max-w-[container-max] w-full px-xl py-xl flex justify-center">
+<!-- Create Class Card -->
+<div class="w-full max-w-lg bg-white rounded-xl border border-outline-variant shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] overflow-hidden">
+<!-- Card Header -->
+<div class="px-xl py-lg border-b border-outline-variant flex items-center gap-md bg-surface-container-low">
+<div class="p-sm bg-primary-container rounded-lg">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">add_box</span>
+</div>
+<div>
+<h2 class="font-h3 text-h3 text-on-surface">Create New Class</h2>
+<p class="font-body-sm text-body-sm text-secondary">Establish a new academic section for the current semester.</p>
+</div>
+</div>
+<!-- Form Content -->
+<form class="p-xl space-y-lg">
+<!-- Class Code (Read Only) -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center gap-xs">
+                            Auto-generated Class Code
+                            <span class="material-symbols-outlined text-[16px]">info</span>
+</label>
+<div class="relative">
+<input class="w-full px-lg py-md bg-surface-container text-on-surface-variant border border-outline-variant rounded-lg font-h2 text-h2 text-center tracking-widest cursor-not-allowed select-none" readonly="" type="text" value="MATH-402"/>
+<div class="absolute inset-y-0 right-4 flex items-center">
+<span class="material-symbols-outlined text-secondary opacity-50">lock</span>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-secondary italic">This unique identifier is automatically sequenced based on department protocols.</p>
+</div>
+<!-- Class Name -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface" for="class-name">Class Name</label>
+<input class="w-full px-lg py-md border border-outline-variant rounded-lg font-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all outline-none" id="class-name" name="class-name" placeholder="e.g. Advanced Linear Algebra" required="" type="text"/>
+</div>
+<!-- Visual Divider & Actions -->
+<div class="pt-lg border-t border-outline-variant flex flex-col sm:flex-row gap-lg">
+<button class="flex-1 px-lg py-md border border-outline-variant text-secondary font-label-md text-label-md rounded-lg hover:bg-surface-container-low transition-colors" type="button">
+                            Cancel
+                        </button>
+<button class="flex-1 px-lg py-md bg-primary-container text-white font-label-md text-label-md rounded-lg hover:bg-primary transition-all shadow-sm active:scale-95" type="submit">
+                            Create Class
+                        </button>
+</div>
+</form>
+<!-- Footer Image/Branding -->
+<div class="relative h-24 overflow-hidden border-t border-outline-variant">
+<div class="absolute inset-0 bg-primary/5 mix-blend-multiply"></div>
+<img alt="Institutional background" class="w-full h-full object-cover grayscale opacity-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw-clt1luyoCn7up2M3tuA5dFdioMNnVLSG9uJt4LTo3Gf53jvr9bcWLKZ7HocOSfvkEjl0OOCVRYfC6rR7A2khpGeXoXdAs1XZr4Rdb-0teTPm0orYadSzgTt4_15-s6M9YaA5sWxiWpZtt8YwFTgVdbBpnygH_v7Xv1IvEMgxj_7uv5qJPS2Yo13tP5RO1rrhMpv2rGD1NZnf_8Bk-Gvxo4F-AGTyE5sAUq3doLMs1KIUhgX-WwJ4YEywyEh9Ga_dt-swUM_lQ"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em]">Institutional Integrity &amp; Focus</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

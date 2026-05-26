@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EduAttend - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error": "#ffffff",
+                      "surface-bright": "#fbf8ff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed-variant": "#173bab",
+                      "on-primary-fixed": "#001453",
+                      "on-error-container": "#93000a",
+                      "surface-dim": "#dad9e3",
+                      "on-secondary-fixed-variant": "#38485d",
+                      "secondary": "#505f76",
+                      "surface-container-high": "#e8e7f1",
+                      "on-surface": "#1a1b22",
+                      "inverse-surface": "#2f3037",
+                      "on-secondary-fixed": "#0b1c30",
+                      "on-surface-variant": "#444653",
+                      "surface-container": "#eeedf7",
+                      "surface-container-low": "#f4f2fc",
+                      "surface": "#fbf8ff",
+                      "outline-variant": "#c4c5d5",
+                      "secondary-container": "#d0e1fb",
+                      "on-tertiary-fixed-variant": "#802a00",
+                      "on-secondary": "#ffffff",
+                      "primary-container": "#1e40af",
+                      "on-secondary-container": "#54647a",
+                      "primary": "#00288e",
+                      "surface-container-highest": "#e3e1eb",
+                      "tertiary-fixed-dim": "#ffb59a",
+                      "error-container": "#ffdad6",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-container": "#ffa583",
+                      "surface-variant": "#e3e1eb",
+                      "on-primary-container": "#a8b8ff",
+                      "inverse-on-surface": "#f1f0fa",
+                      "tertiary-container": "#872d00",
+                      "secondary-fixed": "#d3e4fe",
+                      "secondary-fixed-dim": "#b7c8e1",
+                      "background": "#fbf8ff",
+                      "inverse-primary": "#b8c4ff",
+                      "on-primary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "surface-tint": "#3755c3",
+                      "tertiary": "#611e00",
+                      "on-tertiary-fixed": "#380d00",
+                      "tertiary-fixed": "#ffdbce",
+                      "primary-fixed": "#dde1ff",
+                      "primary-fixed-dim": "#b8c4ff",
+                      "on-background": "#1a1b22",
+                      "outline": "#757684"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "4px",
+                      "sidebar-width": "280px",
+                      "xl": "32px",
+                      "md": "16px",
+                      "xs": "4px",
+                      "container-max": "1440px",
+                      "sm": "8px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "h2": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "h1": ["Inter"],
+                      "h3": ["Inter"],
+                      "display": ["Inter"],
+                      "label-md": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "h2": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "h1": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .input-focus-halo:focus { outline: none; border-color: #1e40af; box-shadow: 0 0 0 2px rgba(30, 64, 175, 0.1); }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex">
+<!-- Full-page split-screen layout -->
+<div class="flex w-full min-h-screen">
+<!-- Left Section: Form -->
+<main class="w-full lg:w-1/2 flex flex-col justify-between p-lg md:p-xl lg:p-[80px] bg-white overflow-y-auto">
+<!-- Logo/Header -->
+<header class="flex items-center gap-sm mb-xl">
+<span class="material-symbols-outlined text-primary text-[32px]" data-icon="how_to_reg">how_to_reg</span>
+<h1 class="font-display text-[28px] text-primary tracking-tight font-bold">EduAttend</h1>
+</header>
+<!-- Login Form Container -->
+<div class="w-full max-w-[440px] mx-auto my-auto py-xl">
+<section class="flex flex-col gap-xl">
+<div class="flex flex-col gap-xs">
+<h2 class="font-h1 text-h1 text-on-surface">Welcome back</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Please enter your institutional credentials to continue.</p>
+</div>
+<form action="#" class="flex flex-col gap-lg" method="POST">
+<!-- Input Group: Email -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="email">Email Address</label>
+<div class="relative">
+<input class="w-full px-lg py-md bg-white border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline input-focus-halo transition-all" id="email" name="email" placeholder="name@university.edu" required="" type="email"/>
+</div>
+</div>
+<!-- Input Group: Password -->
+<div class="flex flex-col gap-xs">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface-variant" for="password">Password</label>
+<a class="font-label-sm text-label-sm text-primary hover:underline transition-all" href="#">Forgot Password?</a>
+</div>
+<div class="relative">
+<input class="w-full px-lg py-md bg-white border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline input-focus-halo transition-all" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+</div>
+</div>
+<!-- Remember Me Toggle -->
+<div class="flex items-center gap-sm">
+<input class="w-4 h-4 text-primary border-outline-variant rounded focus:ring-primary transition-all" id="remember" name="remember" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface-variant cursor-pointer" for="remember">Remember this device</label>
+</div>
+<!-- CTA Button -->
+<button class="w-full bg-primary hover:bg-[#1e3a8a] text-white font-label-md text-label-md py-lg rounded-lg transition-all active:scale-[0.98] focus:ring-2 focus:ring-primary focus:ring-offset-2 shadow-sm" type="submit">
+                        Login
+                    </button>
+</form>
+<!-- Registration Prompt -->
+<div class="pt-lg text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Don't have an account? 
+                        <a class="text-primary font-bold hover:underline" href="#">Register</a>
+</p>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="mt-auto pt-xl">
+<div class="flex flex-col md:flex-row justify-between items-center gap-md border-t border-outline-variant pt-lg">
+<div class="flex items-center gap-xs px-md py-xs bg-secondary-container rounded-full">
+<span class="material-symbols-outlined text-[14px] text-on-secondary-container" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label-sm text-label-sm text-on-secondary-container">System Status: Active</span>
+</div>
+<div class="text-center md:text-right">
+<p class="font-label-sm text-label-sm text-outline">© 2024 EduAttend. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</main>
+<!-- Right Section: Branding Graphic/Hero -->
+<aside class="hidden lg:flex w-1/2 relative overflow-hidden bg-surface-container">
+<img alt="University Campus Architecture" class="absolute inset-0 w-full h-full object-cover grayscale opacity-90" data-alt="A grand, architectural shot of a modern university library building at dusk. The structure features large glass panels reflecting a soft blue twilight sky and warm internal light. The composition emphasizes clean lines and structural integrity, aligning with a professional, institutional minimalist aesthetic. The mood is scholarly, quiet, and focused, using a palette of slate greys, deep blues, and ivory whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiLx8l74VnF8S3ce-V0RXexdVpQwglqBeRqTVDhVK5Rumy04SgCEI9YYydgVhcqdzTcOBlzkg7ua7Y6xzpvowsD-VVJoX7Y5cGnZGZzo9BkEd2-eqAzLMuBlQ3nXiF5QDjpHJcAMF8RDoj9QgHOyRnkR7cthr2CUkh3dsmPHpEmcJbRqp76bau4p4kZFOWQ7StTzqmggSX7PaDNasorDm7yPH7ccypP-vq8LzPpoHU4nppSYzzNreUh2D_Dxob0DfL0y9mLLlMRA"/>
+<!-- Overlay for better text readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent"></div>
+<!-- Hero Content -->
+<div class="relative z-10 mt-auto p-[80px] text-white">
+<h3 class="font-display text-[44px] leading-tight mb-md font-bold text-white drop-shadow-md">Securing Academic Excellence</h3>
+<p class="font-body-lg text-body-lg text-white/90 max-w-[500px] italic">
+                "The function of education is to teach one to think intensively and to think critically."
+            </p>
+</div>
+</aside>
+</div>
+</body></html>
